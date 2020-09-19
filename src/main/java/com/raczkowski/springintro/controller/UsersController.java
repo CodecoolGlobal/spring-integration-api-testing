@@ -33,14 +33,6 @@ public class UsersController {
         return "Hello World";
     }
 
-//    @GetMapping(produces = APPLICATION_JSON_VALUE)
-//    @ResponseBody
-//    public List<UserDto> getAllUsers() {
-//        return usersService.getAllUsers().stream()
-//                .map(user -> new UserDto(user.getName(), user.getAddress(), user.getPhoneNumber()))
-//                .collect(Collectors.toList());
-//    }
-
     @GetMapping(value = "/{id}", produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public UserDto getUser(@PathVariable int id) {

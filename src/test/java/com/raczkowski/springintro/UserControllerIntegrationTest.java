@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -16,6 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -91,12 +93,12 @@ public class UserControllerIntegrationTest {
                 .andExpect(jsonPath("$.[1].phoneNumber").value("733897222"));
     }
 
-//    @Test
-//    public void should_return_created_status_code_when_adding_new_user() throws Exception {
-//        mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON_VALUE)
-//                .content(convertUserDtoToJson(new UserDto("Andrew Golara", "Chicago", "+557263723"))))
-//                .andExpect(status().isCreated());
-//    }
+    @Test
+    public void should_return_created_status_code_when_adding_new_user() throws Exception {
+        mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(convertUserDtoToJson(new UserDto("Andrew Golara", "Chicago", "+557263723"))))
+                .andExpect(status().isCreated());
+    }
 
     @Test
     public void should_return_not_found_status_code_when_user_does_not_exist_for_given_id() throws Exception {
