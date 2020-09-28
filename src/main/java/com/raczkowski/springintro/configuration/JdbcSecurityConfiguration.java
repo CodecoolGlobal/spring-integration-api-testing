@@ -11,9 +11,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
-@Configuration
-@EnableWebSecurity
-@Order(2)
+//@Configuration
+//@EnableWebSecurity
+//@Order(2)
 public class JdbcSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
