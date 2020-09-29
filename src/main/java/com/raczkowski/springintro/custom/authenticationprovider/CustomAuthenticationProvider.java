@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 
-@Component
+//@Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private boolean isValid(String user, String password) {
