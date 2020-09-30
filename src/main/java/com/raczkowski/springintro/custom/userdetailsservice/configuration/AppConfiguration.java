@@ -11,7 +11,7 @@ import java.util.Collection;
 
 import static java.util.Collections.singletonList;
 
-@Configuration
+//@Configuration
 public class AppConfiguration {
 
     @Autowired
